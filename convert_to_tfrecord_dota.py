@@ -11,7 +11,7 @@ flags = tf.app.flags
 flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
 FLAGS = flags.FLAGS
 
-TYPE_OF_DATASET = 'train'
+TYPE_OF_DATASET = 'val'
 fileformat = 'png'
 
 if TYPE_OF_DATASET == 'train':
@@ -70,7 +70,7 @@ def create_tf_example(name):
 
 
 def main(_):
-  writer = tf.python_io.TFRecordWriter('/content/dota_project/data/dota/train_dataset.record'.format(TYPE_OF_DATASET))
+  writer = tf.python_io.TFRecordWriter('/content/dota_project/data/dota/val_dataset.record'.format(TYPE_OF_DATASET))
 
 
 # writer = tf.python_io.TFRecordWriter(FLAGS.output_path)

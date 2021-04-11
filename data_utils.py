@@ -21,9 +21,9 @@ class d_train:
     label_dir = '/content/dota_project/data/dota/train_1024/labelTxt'
 
 
-class d_valid:
-    img_dir = '/data/public/rw/datasets/aerial_inspection/DOTA/valid/images'
-    label_dir = '/data/public/rw/datasets/aerial_inspection/DOTA/valid/labelTxt'
+class d_val:
+    img_dir = '/content/dota_project/data/dota/val_1024/images'
+    label_dir = '/content/dota_project/data/dota/val_1024/labelTxt'
 
 
 def get_file_from_this_rootdir(dir, ext=None):
