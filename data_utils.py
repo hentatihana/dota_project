@@ -18,11 +18,13 @@ dota_10 = ['plane', 'baseball-diamond', 'bridge', 'ground-track-field', 'small-v
 
 class d_train:
     img_dir = '/content/dota_project/data/dota/train_1024/images'
+    img_dir_jpg = '/content/dota_project/data/dota/train_1024/images_jpg'
     label_dir = '/content/dota_project/data/dota/train_1024/labelTxt'
 
 
 class d_val:
     img_dir = '/content/dota_project/data/dota/val_1024/images'
+    img_dir_jpg = '/content/dota_project/data/dota/val_1024/images_jpg'
     label_dir = '/content/dota_project/data/dota/val_1024/labelTxt'
 
 
@@ -109,6 +111,12 @@ def encode_image_png(filepath):
         b_img = base64.b64encode(imageFile.read())
     return b_img
 
+
+def convert_to_jpeg(file, save_dir):
+    file_type = imghdr.what(file)
+    if file_type != 'jpeg':
+        img = Image.open(file)
+        img.convert('RGB').save(save_dir + os.path.splitext(os.path.basename(file))[0] + '.jpg', 'JPEG')
 
 
 
